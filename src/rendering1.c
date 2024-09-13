@@ -86,7 +86,11 @@ void drawWalls(SDL_Renderer *renderer, GameState *state)
 		wallRect.y = drawStart;
 		wallRect.w = 1;
 		wallRect.h = drawEnd - drawStart;
-		textureRect = {texX, 0, 1, texHeight};
+		textureRect.x = texX;
+		textureRect.y = 0;
+		textureRect.w = 1;
+		textureRect.h = texHeight;
+
 		SDL_RenderCopy(renderer, state->wallTexture, &textureRect, &wallRect);
 	}
 }
@@ -172,5 +176,3 @@ int performDDA(float rayDirX, float rayDirY, GameState *state,
 	}
 	return (side);
 }
-
-
