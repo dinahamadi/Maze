@@ -41,10 +41,10 @@ int loadTextures(SDL_Renderer *renderer, GameState *state)
 {
 	int i;
 	SDL_Surface *surface;
-	const char *weaponFiles[] = {"../img/knife.png", "../img/pistol.png",
-		"../img/rifle.png", "../img/inf_gun.png"};
+	const char *weaponFiles[] = {"img/knife.png", "img/pistol.png",
+		"img/rifle.png", "img/inf_gun.png"};
 
-	surface = IMG_Load("../img/walls.png");
+	surface = IMG_Load("img/walls.png");
 	if (surface == NULL)
 	{
 		fprintf(stderr, "Failed to load wall texture: %s\n", IMG_GetError());
@@ -54,7 +54,7 @@ int loadTextures(SDL_Renderer *renderer, GameState *state)
 	SDL_FreeSurface(surface);
 	if (state->wallTexture == NULL)
 		return (-1);
-	surface = IMG_Load("../img/ground.png");
+	surface = IMG_Load("img/ground.png");
 	if (surface == NULL)
 	{
 		fprintf(stderr, "Failed to load ground texture: %s\n", IMG_GetError());
