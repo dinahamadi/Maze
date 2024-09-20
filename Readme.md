@@ -38,7 +38,7 @@ Ready to dive into the maze? Follow these steps to get started:
 To run the Maze Project, execute the compiled binary:
    ```bash
    ./maze map.txt
-
+   ```
 or you can povide your own map file and provide it as an argument
 
 Use the following controls during gameplay:
@@ -71,6 +71,7 @@ We welcome contributions to the Maze Project! To get started, please follow thes
 6. **Push to Your Branch**: Push your changes to your forked repository.
 ```bash
    git push origin feature/YourFeatureName
+
 7. **Create a Pull Request**: Go to the original Maze Project repository, and click on the "Pull Requests" tab. Click "New Pull Request," select your branch, and submit your request.
 
 Follow Up: After submitting your pull request, be available for any discussions or feedback from the maintainers.
