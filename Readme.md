@@ -27,9 +27,8 @@ Ready to dive into the maze? Follow these steps to get started:
    cd maze
 
 2. Install the required dependencies:
-```bash
+   ```bash
    sudo apt-get install libsdl2-dev
-
 
 3. Compile the project using:
    ```bash
@@ -39,6 +38,7 @@ Ready to dive into the maze? Follow these steps to get started:
 To run the Maze Project, execute the compiled binary:
    ```bash
    ./maze map.txt
+
 or you can povide your own map file and provide it as an argument
 
 Use the following controls during gameplay:
@@ -56,9 +56,11 @@ We welcome contributions to the Maze Project! To get started, please follow thes
    ```bash
    git clone https://github.com/yourusername/Maze.git
    cd Maze
+
 3. **Create a New Branch**: It's a good practice to create a new branch for your feature or bug fix.   
    ```bash
    git checkout -b feature/YourFeatureName
+
 4. **Make Your Changes**: Implement your feature or fix a bug. Ensure that your code adheres to the project's coding standards.
 5. **Commit Your Changes**: Commit your changes with a clear and concise commit message.
    ```bash
