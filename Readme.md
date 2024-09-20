@@ -58,7 +58,7 @@ We welcome contributions to the Maze Project! To get started, please follow thes
    git clone https://github.com/yourusername/Maze.git
    cd Maze
 
-3. **Create a New Branch**: It's a good practice to create a new branch for your feature or bug fix.   
+3. **Create a New Branch**: It's a good practice to create a new branch for your feature or bug fix.
    ```bash
    git checkout -b feature/YourFeatureName
 
