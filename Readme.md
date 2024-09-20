@@ -71,6 +71,7 @@ We welcome contributions to the Maze Project! To get started, please follow thes
 6. **Push to Your Branch**: Push your changes to your forked repository.
 ```bash
    git push origin feature/YourFeatureName
+```
 
 7. **Create a Pull Request**: Go to the original Maze Project repository, and click on the "Pull Requests" tab. Click "New Pull Request," select your branch, and submit your request.
 
