@@ -47,6 +47,7 @@ Use the following controls during gameplay:
 - Mouse moves: Rotate the camera, just like a FPS game !
 - W, A, S, D: Move within the maze.
 - Number Keys (1-4): Change the weapon.
+
 ## Contributing
 
 We welcome contributions to the Maze Project! To get started, please follow these steps:
@@ -66,6 +67,7 @@ We welcome contributions to the Maze Project! To get started, please follow thes
    ```bash
    git add .
    git commit -m "Add your message here"
+
 6. **Push to Your Branch**: Push your changes to your forked repository.
 ```bash
    git push origin feature/YourFeatureName
