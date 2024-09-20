@@ -1,5 +1,47 @@
 #include "../inc/maze.h"
 /**
+ * performDDA - Performs the Digital Differential Analyzer
+ * to find the wall hit.
+ * @rayDirX: The X direction of the ray.
+ * @rayDirY: The Y direction of the ray.
+ * @state: Pointer to the GameState structure.
+ * @mapX: Pointer to the current map X coordinate.
+ * @mapY: Pointer to the current map Y coordinate.
+ * @sideDistX: Pointer to the side distance X value.
+ * @sideDistY: Pointer to the side distance Y value.
+ * @stepX: Pointer to the step value for the X direction.
+ * @stepY: Pointer to the step value for the Y direction.
+ * Return: 1 if a wall is hit, 0 otherwise.
+ */
+int performDDA(float rayDirX, float rayDirY, GameState *state,
+		int *mapX, int *mapY, float *sideDistX, float *sideDistY,
+		int *stepX, int *stepY)
+{
+	int hit = 0;
+	int side = 0;
+
+	while (hit == 0)
+	{
+		if (*sideDistX < *sideDistY)
+		{
+			*sideDistX += fabsf(1 / rayDirX);
+			*mapX += *stepX;
+			side = 0;
+		}
+		else
+		{
+			*sideDistY += fabsf(1 / rayDirY);
+			*mapY += *stepY;
+			side = 1;
+		}
+		if (state->worldMap[*mapX][*mapY] > 0)
+		{
+			hit = 1;
+		}
+	}
+	return (side);
+}
+/**
  * calculatePerpWallDist - Calculates the perpendicular
  * distance to the wall hit.
  * @rayDirWThe Wof the ray.
@@ -28,7 +70,6 @@ float calculatePerpWallDist(float rayDirX, float rayDirY, GameState *state,
 	}
 	return (perpWallDist);
 }
-
 /**
  * loadTextures - Loads textures for walls, ground, and weapons.
  * @renderer: Pointer to the SDL_Renderer used for rendering.

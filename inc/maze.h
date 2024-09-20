@@ -87,15 +87,13 @@ void rotateCamera(GameState *state, float angle);
 void renderFrame(SDL_Renderer *renderer, GameState *state);
 void renderBackground(SDL_Renderer *renderer, GameState *state);
 void drawWalls(SDL_Renderer *renderer, GameState *state);
-void calculateStepAndSideDist(float rayDirX, float rayDirY, GameState *state,
-	int mapX, int mapY, int *stepX, int *stepY,
-	float *sideDistX, float *sideDistY);
-int performDDA(float rayDirX, float rayDirY, GameState *state,
-	int *mapX, int *mapY, float *sideDistX, float *sideDistY,
-	int *stepX, int *stepY);
+
 /* rendering2.c functions */
+int performDDA(float rayDirX, float rayDirY, GameState *state,
+		int *mapX, int *mapY, float *sideDistX, float *sideDistY,
+		int *stepX, int *stepY);
 float calculatePerpWallDist(float rayDirX, float rayDirY, GameState *state,
-	int mapX, int mapY, int stepX, int stepY, int side);
+		int mapX, int mapY, int stepX, int stepY, int side);
 int loadTextures(SDL_Renderer *renderer, GameState *state);
 void renderWeapon(SDL_Renderer *renderer, GameState *state);
 
