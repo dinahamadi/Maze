@@ -24,18 +24,19 @@ Ready to dive into the maze? Follow these steps to get started:
 1. Clone the repository:
    ```bash
    git clone https://github.com/dinahamadi/Maze.git
-   ```bash
    cd maze
-2. Install the required dependencies:
+
+2 Install the required dependencies:
 ```bash
    sudo apt-get install libsdl2-dev
+
 3. Compile the project using:
-```bash
+   ```bash
    gcc -Wall -Werror -Wextra -pedantic -o maze src/*.c -lSDL2 -lSDL2_image -lm
 
 ## Usage
 To run the Maze Project, execute the compiled binary:
-```bash
+   ```bash
    ./maze map.txt
 or you can povide your own map file and provide it as an argument
 
