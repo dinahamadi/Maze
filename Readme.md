@@ -26,7 +26,7 @@ Ready to dive into the maze? Follow these steps to get started:
    git clone https://github.com/dinahamadi/Maze.git
    cd maze
 
-2 Install the required dependencies:
+2. Install the required dependencies:
 ```bash
    sudo apt-get install libsdl2-dev
 
