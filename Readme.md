@@ -30,6 +30,7 @@ Ready to dive into the maze? Follow these steps to get started:
 ```bash
    sudo apt-get install libsdl2-dev
 
+
 3. Compile the project using:
    ```bash
    gcc -Wall -Werror -Wextra -pedantic -o maze src/*.c -lSDL2 -lSDL2_image -lm
