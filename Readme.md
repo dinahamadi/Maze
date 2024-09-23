@@ -1,14 +1,14 @@
-# Maze Project
+# Maze Project :bricks:
 
 Welcome to the **Maze Project**! This is an innovative maze game built using SDL2 and C, designed to challenge your navigation skills with complex mazes and interactive gameplay.
 
 ![Maze Screenshot](maze-screenshot.png)
 
-## Introduction
+## Introduction :woman_teacher:
 
 The goal of this project is to create a 3D game using raycasting techniques. Players navigate through a maze by rotating and moving their camera perspective while avoiding collisions with walls. The game includes various weapons, allowing for an engaging gameplay experience.
 
-## Background Context
+## Background Context :female_detective:
 
 This project aims to implement a maze game where the player can:
 - Rotate the camera using the left and right arrow keys.
@@ -17,7 +17,7 @@ This project aims to implement a maze game where the player can:
 - Utilize a map stored in a `map.txt` file to define the maze layout.
 - Change weapons by pressing the number keys (1-4), each corresponding to a different weapon.
 
-## Installation
+## Installation :rocket:
 
 Ready to dive into the maze? Follow these steps to get started:
 
@@ -34,7 +34,7 @@ Ready to dive into the maze? Follow these steps to get started:
    ```bash
    gcc -Wall -Werror -Wextra -pedantic -o maze src/*.c -lSDL2 -lSDL2_image -lm
 
-## Usage
+## Usage :computer_mouse:
 To run the Maze Project, execute the compiled binary:
    ```bash
    ./maze map.txt
@@ -48,7 +48,7 @@ Use the following controls during gameplay:
 - W, A, S, D: Move within the maze.
 - Number Keys (1-4): Change the weapon.
 
-## Contributing
+## Contributing :hammer_and_wrench:
 
 We welcome contributions to the Maze Project! To get started, please follow these steps:
 
@@ -78,8 +78,11 @@ We welcome contributions to the Maze Project! To get started, please follow thes
 Follow Up: After submitting your pull request, be available for any discussions or feedback from the maintainers.
 
 Thank you for contributing to the Maze Project! Your help is greatly appreciated.
+## Authors :bowtie:
 
-## Licensing
+- **Dina Hammadi** <[dinahamadi](https://github.com/dinahamadi)>
+
+## Licensing :receipt:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
