@@ -102,6 +102,7 @@ int loadMap(const char *filename, GameState *state)
 				return (-1);
 			}
 		}
+
 	}
 	fclose(file);
 	return (0);
@@ -127,4 +128,3 @@ void cleanUp(SDL_Window *window, SDL_Renderer *renderer, GameState *state)
 	IMG_Quit();
 	SDL_Quit();
 }
-

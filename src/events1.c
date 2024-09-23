@@ -42,10 +42,10 @@ void handleKeyDownEvent(SDL_Event *event, GameState *state)
 	switch (event->key.keysym.sym)
 	{
 		case SDLK_LEFT:
-			rotateCamera(state, state->rotationSpeed);
+			rotateCamera(state, -state->rotationSpeed);
 			break;
 		case SDLK_RIGHT:
-			rotateCamera(state, -state->rotationSpeed);
+			rotateCamera(state, state->rotationSpeed);
 			break;
 		case SDLK_w:
 			moveForward(state, 0.1);

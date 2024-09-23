@@ -7,9 +7,11 @@
  */
 void renderFrame(SDL_Renderer *renderer, GameState *state)
 {
+	float zBuffer[state->screenWidth];
+
 	renderBackground(renderer, state);
-	renderWeapon(renderer, state);
-	drawWalls(renderer, state);
+	drawWalls(renderer, state, zBuffer);
+	drawEnemies(renderer, state, zBuffer);
 	renderWeapon(renderer, state);
 	SDL_RenderPresent(renderer);
 }
@@ -36,8 +38,9 @@ void renderBackground(SDL_Renderer *renderer, GameState *state)
  * drawWalls - Uses raycasting to draw walls on the screen.
  * @renderer: Pointer to the SDL_Renderer used for rendering.
  * @state: Pointer to the GameState structure.
+ * @zBuffer: Array to store the distance to the nearest wall.
  */
-void drawWalls(SDL_Renderer *renderer, GameState *state)
+void drawWalls(SDL_Renderer *renderer, GameState *state, float zBuffer[])
 {
 	int x, mapX, mapY, stepX, stepY, side;
 	int texWidth = 124, texHeight = 124;
@@ -53,7 +56,6 @@ void drawWalls(SDL_Renderer *renderer, GameState *state)
 		rayDirY = state->dirY + state->planeY * cameraX;
 		mapX = (int)state->posX;
 		mapY = (int)state->posY;
-
 		sideDistX = (rayDirX < 0) ? (state->posX - mapX) * fabsf(1 / rayDirX) :
 			(mapX + 1.0 - state->posX) * fabsf(1 / rayDirX);
 		sideDistY = (rayDirY < 0) ? (state->posY - mapY) * fabsf(1 / rayDirY) :
@@ -62,8 +64,9 @@ void drawWalls(SDL_Renderer *renderer, GameState *state)
 		stepY = (rayDirY < 0) ? -1 : 1;
 		side = performDDA(rayDirX, rayDirY, state, &mapX, &mapY,
 				&sideDistX, &sideDistY, &stepX, &stepY);
-		perpWallDist = calculatePerpWallDist(rayDirX, rayDirY, state,
-				mapX, mapY, stepX, stepY, side);
+		perpWallDist = calculatePerpWallDist(rayDirX, rayDirY,
+				state, mapX, mapY, stepX, stepY, side);
+		zBuffer[x] = perpWallDist;
 		lineHeight = (int)(state->screenHeight / perpWallDist);
 		drawStart = fmax(-lineHeight / 2 + state->screenHeight / 2, 0);
 		drawEnd = fmin(lineHeight / 2 + state->screenHeight / 2,
@@ -79,3 +82,4 @@ void drawWalls(SDL_Renderer *renderer, GameState *state)
 		SDL_RenderCopy(renderer, state->wallTexture, &textureRect, &wallRect);
 	}
 }
+

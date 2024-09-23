@@ -13,6 +13,7 @@
  * @stepY: Pointer to the step value for the Y direction.
  * Return: 1 if a wall is hit, 0 otherwise.
  */
+
 int performDDA(float rayDirX, float rayDirY, GameState *state,
 		int *mapX, int *mapY, float *sideDistX, float *sideDistY,
 		int *stepX, int *stepY)
@@ -22,6 +23,11 @@ int performDDA(float rayDirX, float rayDirY, GameState *state,
 
 	while (hit == 0)
 	{
+		if (*mapX < 0 || *mapX >= MAP_WIDTH || *mapY < 0 || *mapY >= MAP_HEIGHT)
+		{
+			hit = 1;
+			break;
+		}
 		if (*sideDistX < *sideDistY)
 		{
 			*sideDistX += fabsf(1 / rayDirX);
@@ -34,13 +40,16 @@ int performDDA(float rayDirX, float rayDirY, GameState *state,
 			*mapY += *stepY;
 			side = 1;
 		}
-		if (state->worldMap[*mapX][*mapY] > 0)
+		if (*mapX >= 0 && *mapX < MAP_WIDTH && *mapY >= 0 && *mapY < MAP_HEIGHT &&
+				state->worldMap[*mapX][*mapY] == 1)
 		{
 			hit = 1;
 		}
 	}
 	return (side);
 }
+
+
 /**
  * calculatePerpWallDist - Calculates the perpendicular
  * distance to the wall hit.
@@ -140,4 +149,3 @@ void renderWeapon(SDL_Renderer *renderer, GameState *state)
 	SDL_RenderCopy(renderer, state->weaponTextures[state->currentWeaponIndex],
 			NULL, &weaponRect);
 }
-

@@ -25,7 +25,8 @@ int main(int argc, char *argv[])
 	{
 		return (-1);
 	}
-	if (loadTextures(renderer, &state) != 0)
+	if (loadTextures(renderer, &state) != 0 ||
+			loadEnemyTextures(&state, renderer) != 0)
 	{
 		cleanUp(window, renderer, &state);
 		return (-1);
@@ -34,6 +35,7 @@ int main(int argc, char *argv[])
 	{
 		cleanUp(window, renderer, &state);
 		return (-1);
+
 	}
 	running = 1;
 	while (running)
@@ -46,7 +48,6 @@ int main(int argc, char *argv[])
 		renderFrame(renderer, &state);
 		SDL_Delay(16);
 	}
-
 	cleanUp(window, renderer, &state);
 	return (0);
 }

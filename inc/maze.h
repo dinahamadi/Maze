@@ -6,15 +6,18 @@
 #include <math.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
+#include <stdbool.h>
 
 /* Map dimensions and screen resolution */
-#define MAP_WIDTH 16
-#define MAP_HEIGHT 24
+#define MAP_WIDTH 10
+#define MAP_HEIGHT 10
 #define SCREEN_WIDTH 640
 #define SCREEN_HEIGHT 480
 
 /* Mouse sensitivity for camera control */
 #define MOUSE_SENSITIVITY 0.00001f
+#define TILE_SIZE 64
 
 /**
  * struct GameState - Holds the state of the game.
@@ -38,6 +41,7 @@
  * @groundTexture: a pointer to the gound texture.
  * @weaponTextures: an array to hold different weapon textures.
  * @currentWeaponIndex: Represent the currently used weapon.
+ * @enemyTexture: a pointer to the enemy texture
  */
 typedef struct GameState
 {
@@ -61,6 +65,7 @@ typedef struct GameState
 	SDL_Texture *groundTexture;
 	SDL_Texture *weaponTextures[4];
 	int currentWeaponIndex;
+	SDL_Texture *enemyTexture;
 } GameState;
 
 
@@ -82,11 +87,10 @@ void strafe(GameState *state, float distance);
 void handleCollisions(GameState *state);
 void updatePlayerPosition(GameState *state);
 void rotateCamera(GameState *state, float angle);
-
 /* rendering1.c functions */
 void renderFrame(SDL_Renderer *renderer, GameState *state);
 void renderBackground(SDL_Renderer *renderer, GameState *state);
-void drawWalls(SDL_Renderer *renderer, GameState *state);
+void drawWalls(SDL_Renderer *renderer, GameState *state, float zBuffer[]);
 
 /* rendering2.c functions */
 int performDDA(float rayDirX, float rayDirY, GameState *state,
@@ -96,5 +100,15 @@ float calculatePerpWallDist(float rayDirX, float rayDirY, GameState *state,
 		int mapX, int mapY, int stepX, int stepY, int side);
 int loadTextures(SDL_Renderer *renderer, GameState *state);
 void renderWeapon(SDL_Renderer *renderer, GameState *state);
+
+/* enemies.c functions */
+int loadEnemyTextures(GameState *state, SDL_Renderer *renderer);
+bool isEnemyVisible(GameState *state, float enemyX, float enemyY);
+int isEnemyVisibleAndClose(GameState *state, float enemyX, float enemyY);
+void drawEnemy(SDL_Renderer *renderer, GameState *state, float zBuffer[],
+		float enemyX, float enemyY);
+void drawEnemies(SDL_Renderer *renderer, GameState *state, float zBuffer[]);
+
+
 
 #endif
