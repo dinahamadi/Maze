@@ -11,11 +11,19 @@ The goal of this project is to create a 3D game using raycasting techniques. Pla
 ## Background Context :female_detective:
 
 This project aims to implement a maze game where the player can:
-- Rotate the camera using the left and right arrow keys.
+- Rotate the camera using the left and right arrow keys, as well as mouve mouvements.
 - Move within the maze using the W, A, S, and D keys.
 - Handle collisions with walls effectively.
 - Utilize a map stored in a `map.txt` file to define the maze layout.
 - Change weapons by pressing the number keys (1-4), each corresponding to a different weapon.
+- Encounter with enemies located throughout the maze.
+### Enemies in the Maze :ghost:
+
+As players navigate the maze, they will encounter enemies positioned at specific locations. Here’s how enemies function in the game:
+
+- **Enemy Detection**: The game detects the player's proximity to enemies, enabling a dynamic gameplay experience.
+- **Enemy Visibility**: Enemies are rendered on the screen based on the player’s position and viewing angle, utilizing raycasting techniques to ensure that only visible enemies are drawn.
+![Maze Screenshot](maze-screenshot2.png)
 
 ## Installation :rocket:
 
@@ -35,11 +43,17 @@ Ready to dive into the maze? Follow these steps to get started:
    gcc -Wall -Werror -Wextra -pedantic -o maze src/*.c -lSDL2 -lSDL2_image -lm
 
 ## Usage :computer_mouse:
-To run the Maze Project, execute the compiled binary:
+To run the Maze Project, execute the compiled binary with the map.txt as an argument
    ```bash
    ./maze map.txt
    ```
-or you can povide your own map file and provide it as an argument
+Alternatively, you can povide your own map file and provide it as an argument, your file should use the value 0 for an empty space, 1 for walls and 2 for enemies.
+For bigger maps remember to update those two lines 
+   ```bash
+   #define MAP_WIDTH 10
+   #define MAP_HEIGHT 10
+   ```
+in inc/maze.h.
 
 Use the following controls during gameplay:
 
