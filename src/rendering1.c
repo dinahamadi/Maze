@@ -38,7 +38,7 @@ void renderBackground(SDL_Renderer *renderer, GameState *state)
  * drawWalls - Uses raycasting to draw walls on the screen.
  * @renderer: Pointer to the SDL_Renderer used for rendering.
  * @state: Pointer to the GameState structure.
- * @zBuffer: Array to store the distance to the nearest wall.
+* @zBuffer: Array to store the distance to the nearest wall.
  */
 void drawWalls(SDL_Renderer *renderer, GameState *state, float zBuffer[])
 {

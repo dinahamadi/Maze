@@ -61,8 +61,8 @@ int initialize(SDL_Window **window, SDL_Renderer **renderer, GameState *state)
 	{192, 192, 192, 255};
 	state->floorColor = (SDL_Color)
 	{34, 139, 34, 255};
-	state->posX = 5.9;
-	state->posY = 5.0;
+	state->posX = 12.0;
+	state->posY = 1.9;
 	state->dirX = 0.88;
 	state->dirY = 0.47;
 	state->planeX = 0.0;

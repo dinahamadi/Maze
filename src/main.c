@@ -35,7 +35,6 @@ int main(int argc, char *argv[])
 	{
 		cleanUp(window, renderer, &state);
 		return (-1);
-
 	}
 	running = 1;
 	while (running)

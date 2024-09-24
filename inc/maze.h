@@ -10,8 +10,8 @@
 #include <stdbool.h>
 
 /* Map dimensions and screen resolution */
-#define MAP_WIDTH 10
-#define MAP_HEIGHT 10
+#define MAP_WIDTH 15
+#define MAP_HEIGHT 15
 #define SCREEN_WIDTH 640
 #define SCREEN_HEIGHT 480
 

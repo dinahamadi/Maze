@@ -1,6 +1,4 @@
 #include "../inc/maze.h"
-#include <math.h>
-#include <stdbool.h>
 /**
  * loadEnemyTextures - Loads the enemy texture from the specified file.
  * @state: Pointer to the GameState structure.
