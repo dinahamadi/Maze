@@ -63,8 +63,8 @@ int initialize(SDL_Window **window, SDL_Renderer **renderer, GameState *state)
 	{34, 139, 34, 255};
 	state->posX = 12.0;
 	state->posY = 1.9;
-	state->dirX = 0.88;
-	state->dirY = 0.47;
+	state->dirX = 0.9;
+	state->dirY = 0.4;
 	state->planeX = 0.0;
 	state->planeY = 0.66;
 	state->rotationSpeed = 0.05;
